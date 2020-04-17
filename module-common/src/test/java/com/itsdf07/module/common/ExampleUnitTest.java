@@ -1,6 +1,4 @@
-package com.itsdf07.app.notes;
-
-import com.itsdf07.module.common.Module2Common;
+package com.itsdf07.module.common;
 
 import org.junit.Test;
 
@@ -15,9 +13,5 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
-    }
-    @Test
-    public void testModuleData() throws Exception {
-        System.out.println(Module2Common.onTestModule2Common());
     }
 }
