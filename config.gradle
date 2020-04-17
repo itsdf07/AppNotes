@@ -6,6 +6,7 @@ ext {
     appcompatV7Version = "26.+"
     junitVersion = "4.12"
     designVersion = "26.+"
+    libALog = "2.0.2"
     //appId：自定义的一个map映射集合，key-value
     appId = [
             "app": "com.itsdf07.app.notes",
@@ -22,8 +23,8 @@ ext {
             //shell语言语法：${变量名}
             "appcompat-v7": "com.android.support:appcompat-v7:${appcompatV7Version}",
             "junit"       : "junit:junit:${junitVersion}",
-            "design"       : "com.android.support:design:${designVersion}",
-
+            "design"      : "com.android.support:design:${designVersion}",
+            "lib-alog"    : "com.itsdf07:lib-alog:${libALog}"
     ]
 
 

@@ -31,4 +31,5 @@ dependencies {
     })
     compile dep["appcompat-v7"]
     testCompile dep["junit"]
+    compile dep["lib-alog"]
 }
