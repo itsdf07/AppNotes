@@ -1,14 +1,21 @@
 apply plugin: 'com.android.application'
+//赋值与引用，def 类型 相当于java中的Object类型，如config是一个map集合对象
+def config = rootProject.ext.android
+def appId = rootProject.ext.appId
+def dep = rootProject.ext.dependencies
+println("config内容：${config}")//输出内容-》config内容：[compileSdkVersion:26, buildToolsVersion:26.0.2, minSdkVersion:19, targetSdkVersion:26]
+println("appId内容：${appId}")//输出内容-》appId内容：[app:com.itsdf07.app.notes]
+println("dep内容：${dep}")
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion config.compileSdkVersion //map集合取值方式一
+    buildToolsVersion config.buildToolsVersion
     defaultConfig {
-        applicationId "com.itsdf07.app.notes"
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        applicationId appId["app"]//map集合取值方式二
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -24,9 +31,9 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support:design:26.+'
+    compile dep["appcompat-v7"]
+    compile dep["design"]
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+    testCompile dep["junit"]
     compile project(':module-common')
 }
