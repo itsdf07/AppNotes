@@ -2,6 +2,8 @@
  * ext：扩展内容，固定格式（即只能用ext{}），并且是一个闭包的内容
  */
 ext {
+    //当前是否为debug模式
+    isDebug = true
     //appcompatV7Version：自定义的属性，下同
     appcompatV7Version = "26.+"
     junitVersion = "4.12"
