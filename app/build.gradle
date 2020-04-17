@@ -36,4 +36,6 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile dep["junit"]
     compile project(':module-common')
+    compile project(':module-ota')
+    compile project(':module-user')
 }
