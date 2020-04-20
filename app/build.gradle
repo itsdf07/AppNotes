@@ -37,5 +37,8 @@ dependencies {
     testCompile dep["junit"]
     compile project(':module-common')
     compile project(':module-ota')
-    compile project(':module-user')
+    if (isModule) {//集成模式时，module才会引入 apply plugin: 'com.android.library'，此时module才可被compile
+        compile project(':module-user')
+    }
+
 }

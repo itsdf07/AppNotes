@@ -4,6 +4,10 @@
 ext {
     //当前是否为debug模式
     isDebug = true
+
+    //false-组件模式，true-集成模式
+    isModule = false //组件模式与集成模式的控制开关
+
     //appcompatV7Version：自定义的属性，下同
     appcompatV7Version = "26.+"
     junitVersion = "4.12"
@@ -11,7 +15,8 @@ ext {
     libALog = "2.0.2"
     //appId：自定义的一个map映射集合，key-value
     appId = [
-            "app": "com.itsdf07.app.notes",
+            "app"        : "com.itsdf07.app.notes",
+            "module-user": "com.itsdf07.app.user",
     ]
     android = [
             compileSdkVersion: 26,
