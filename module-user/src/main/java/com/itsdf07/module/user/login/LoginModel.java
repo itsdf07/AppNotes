@@ -1,6 +1,10 @@
 package com.itsdf07.module.user.login;
 
 
+import com.itsdf07.module.common.http.http.HttpUtils;
+import com.itsdf07.module.common.http.http.bean.BaseBean;
+import com.itsdf07.module.common.http.http.impl.HttpCallbackImpl;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -24,14 +28,14 @@ public class LoginModel implements LoginContracts.ILoginModel {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-//        HttpUtils.getInstance().postRaw("api/usr/login", body.toString(), new HttpCallbackImpl<BaseBean>() {
-//            @Override
-//            public void onSuccess(BaseBean result) {
-//                if (null != callback) {
-//                    callback.onComplete(true);
-//                }
-//            }
-//        }, null, null);
+        HttpUtils.getInstance().postRaw("api/usr/login", body.toString(), new HttpCallbackImpl<BaseBean>() {
+            @Override
+            public void onSuccess(BaseBean result) {
+                if (null != callback) {
+                    callback.onComplete(true);
+                }
+            }
+        }, null, null);
 
     }
 }
