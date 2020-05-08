@@ -28,10 +28,15 @@ ext {
     ]
     dependencies = [
             //shell语言语法：${变量名}
-            "appcompat-v7": "com.android.support:appcompat-v7:${appcompatV7Version}",
-            "junit"       : "junit:junit:${junitVersion}",
-            "design"      : "com.android.support:design:${designVersion}",
-            "lib-alog"    : "com.itsdf07:lib-alog:${libALog}"
+            "appcompat-v7"       : "com.android.support:appcompat-v7:${appcompatV7Version}",
+            "junit"              : "junit:junit:${junitVersion}",
+            "design"             : "com.android.support:design:${designVersion}",
+            "retrofit"           : "com.squareup.retrofit2:retrofit:2.4.0",
+            "converter-scalars"  : "com.squareup.retrofit2:converter-scalars:2.4.0",
+            "logging-interceptor": "com.squareup.okhttp3:logging-interceptor:3.8.1",
+            "gson"               : "com.google.code.gson:gson:2.8.1",
+            "lib-alog"           : "com.itsdf07:lib-alog:${libALog}"
+
     ]
 
 
