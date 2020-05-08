@@ -1,6 +1,7 @@
 package com.itsdf07.app.user;
 
-import android.app.Application;
+
+import com.itsdf07.module.common.CommonApplication;
 
 /**
  * @Description:
@@ -10,7 +11,8 @@ import android.app.Application;
  * @Date 2020/4/16
  */
 
-public class ModuleUserApplication extends Application {
+public class ModuleUserApplication extends CommonApplication {
+
     @Override
     public void onCreate() {
         super.onCreate();

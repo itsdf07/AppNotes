@@ -23,6 +23,11 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+//        添加一条boolean类型的变量，用来指示当前集成模式或者组件模式，
+//         在...\AppNotes\module-user\build\generated\source\buildConfig\debug\...\BuildConfig.java下生成对应变量
+//        可用于java类中直接通过BuildConfig.isModule使用
+        buildConfigField("boolean", "isModule", String.valueOf(isModule))
+
         if (!isModule) {//组件模式下
             applicationId appId["module-user"]//map集合取值方式二
         }
@@ -32,9 +37,10 @@ android {
             main {
                 if (!isModule) {
                     //组件模式下使用指定的manifest文件
-                    manifest.srcFile 'src/main/module/AndroidManifest.xml'
-                    java.srcDirs 'src/main/module/java'
+                    manifest.srcFile 'src/module/AndroidManifest.xml'
+                    java.srcDirs 'src/module/java', 'src/main/java'
                 } else {
+                    manifest.srcFile 'src/main/AndroidManifest.xml'
                     java.srcDirs 'src/main/java'
                 }
             }
